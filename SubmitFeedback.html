@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Swiggy Feedback Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+    <style>
+        *{
+  font-family: "Tektur", sans-serif;
+}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 20px;
+        }
+        .feedback-container {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .stars {
+            color: orange;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .emoji-section img {
+            width: 50px;
+            margin: 10px;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        .submit-btn {
+            background-color: orange;
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .a1{
+            font-weight: bold;
+            color: #1808eb;
+        }
+        .a2{
+            font-weight: bold;
+            color: #ea4e06;
+        }
+    </style>
+    <script>
+        function confirmPayment() {
+        alert("Thank you for your purchase.");
+        localStorage.removeItem("cart"); // Clear cart after payment
+        window.location.href = "Homepage.html"; // Redirect to home page
+    }
+    </script>
+</head>
+<body>
+
+    <div class="feedback-container">
+        <h3>Bags Passcode : </h3>
+        <span class="a2">4321</span>
+        <h5>Rate your delivery</h5>
+        <p>You have rated</p>
+        
+        <div class="stars">
+            ★ ★ ★ ★ ★
+        </div>
+        <div>
+            <h3>Delivery Boys mobile number</h3>
+            <p>6305698151</p>
+        </div>
+        <h4>LOVED IT!</h4>
+        
+        <p><strong>What were you impressed with?</strong></p>
+        
+        <div class="emoji-section">
+            <img src="https://cdn-icons-png.freepik.com/256/11157/11157025.png?uid=R185085967&ga=GA1.1.1334335634.1738134770&semt=ais_hybrid" alt="Professional Executive">
+            <img src="https://cdn-icons-png.freepik.com/256/5630/5630677.png?uid=R185085967&ga=GA1.1.1334335634.1738134770&semt=ais_hybrid" alt="Delivery Time">
+            <img src="https://cdn-icons-png.freepik.com/256/17266/17266296.png?uid=R185085967&ga=GA1.1.1334335634.1738134770&semt=ais_hybrid" alt="Superstar Delivery">
+        </div>
+        
+        <textarea class="form-control" placeholder="Tell us what you liked..."></textarea>
+        
+        <p class="text-muted small mt-2">
+            Your word makes <span class="a1">food Munch  </span> a better place. You are the influence!
+        </p>
+        
+        <button class="submit-btn mt-3" onclick="confirmPayment()">SUBMIT FEEDBACK</button>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

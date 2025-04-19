@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin - Customer Orders</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+<body>
+  <div class="container py-5">
+    <h1>📦 Customer Orders</h1>
+    <div id="orders-container"></div>
+  </div>
+
+  <script>
+    function loadOrders() {
+      const orders = JSON.parse(localStorage.getItem("orders")) || [];
+      const container = document.getElementById("orders-container");
+
+      if (orders.length === 0) {
+        container.innerHTML = "<p>No orders yet.</p>";
+        return;
+      }
+
+      orders.forEach(order => {
+        const orderDiv = document.createElement("div");
+        orderDiv.className = "card mb-4";
+
+        const itemsHtml = order.items.map(item =>
+          `<li>${item.name} - Rs. ${item.price} x ${item.quantity}</li>`
+        ).join("");
+
+        orderDiv.innerHTML = `
+          <div class="card-body">
+            <h5 class="card-title">Order ID: ${order.id}</h5>
+            <p class="card-text"><strong>Date:</strong> ${order.timestamp}</p>
+            <ul>${itemsHtml}</ul>
+          </div>
+        `;
+
+        container.appendChild(orderDiv);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", loadOrders);
+  </script>
+</body>
+</html>
